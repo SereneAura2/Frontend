@@ -1,11 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from '@/component/Navbar';
-import Footer from '@/component/Footer';
-import Home from '@/page/Home';
-import About from '@/page/About';
-import Services from '@/page/Services';
-import Contact from '@/page/Contact';
+import { Analytics } from "@vercel/analytics/react";
+import Navbar from './component/Navbar';
+import Footer from './component/Footer';
+import Home from './page/Home';
+import About from './page/About';
+import Services from './page/Services';
+import Contact from './page/Contact';
 import Booking from '@/page/Booking';
 import Supplies from '@/page/Supplies';
 import Review from '@/page/Review';
@@ -25,7 +26,7 @@ const router = {
   }
 };
 
-function App() {
+const App: FC = () => {
   return (
     <Router future={router.future}>
       <div className="flex flex-col min-h-screen">
@@ -49,9 +50,10 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
-}
+};
 
 export default App; 
