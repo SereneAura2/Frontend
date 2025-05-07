@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 import Navbar from './component/Navbar';
 import Footer from './component/Footer';
 import Home from './page/Home';
@@ -28,6 +28,10 @@ const router = {
 };
 
 const App: FC = () => {
+  useEffect(() => {
+    injectSpeedInsights();
+  }, []);
+
   return (
     <Router future={router.future}>
       <div className="flex flex-col min-h-screen">
@@ -52,7 +56,6 @@ const App: FC = () => {
         </main>
         <Footer />
         <Analytics />
-        <SpeedInsights />
       </div>
     </Router>
   );
