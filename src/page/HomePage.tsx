@@ -1,4 +1,5 @@
 import SignupForm from '@/component/SignupForm';
+import ServicesSlideshow from '@/component/ServicesSlideshow';
 
 export default function HomePage() {
   return (
@@ -6,11 +7,32 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Welcome to Home Haulers
+            Pack Go Movers
           </h1>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
             Your trusted partner for stress-free moving experiences. We're launching soon - be the first to know!
           </p>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+            Our Moving Services
+          </h2>
+          <ServicesSlideshow />
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-xl text-gray-600 mb-8">
+            Professional moving services for your home and office needs
+          </p>
+          <div className="flex justify-center space-x-4">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              Request a Quote
+            </button>
+            <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              Let's Chat
+            </button>
+          </div>
         </div>
 
         <div className="mt-12">
